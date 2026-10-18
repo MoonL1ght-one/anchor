@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="锚点：个人宪法、注意力账本、数字遗产清单、人生 B 计划。数据只存在本机。">
+<title>锚点 · 个人底层系统</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E5B4E'/%3E%3Cpath d='M16 8v17' stroke='%23FBF8F0' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='7' r='2.2' fill='%23FBF8F0'/%3E%3Cpath d='M10 14h12' stroke='%23FBF8F0' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M16 6.5v21"/>
+        <circle cx="16" cy="5" r="2.2"/>
+        <path d="M8.5 14h15"/>
+        <path d="M9 19.5c1.5 4.4 3.9 6.6 7 6.6s5.5-2.2 7-6.6"/>
+      </svg>
+      <div class="brand-text">
+        <div class="brand-name">锚点</div>
+        <div class="brand-sub">个人底层系统</div>
+      </div>
+      <button class="icon-btn brand-btn" id="btnData" title="数据与备份" aria-label="数据与备份">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+      </button>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="模块导航">
+      <button class="nav-item is-active" data-view="constitution">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h6M9 8.5h3"/></svg>
+        <span><span class="nav-label"><span class="nav-full">个人宪法</span><i class="nav-abbr">宪法</i></span><small>原则、边界、价值观</small></span>
+      </button>
+      <button class="nav-item" data-view="attention">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3.8"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6"/></svg>
+        <span><span class="nav-label"><span class="nav-full">注意力账本</span><i class="nav-abbr">账本</i></span><small>我为什么分心</small></span>
+      </button>
+      <button class="nav-item" data-view="estate">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="3.4"/><path d="M10.6 10.6L20 20"/><path d="M16.4 16.4l2-2M18.7 18.7l2-2"/></svg>
+        <span><span class="nav-label"><span class="nav-full">数字遗产</span><i class="nav-abbr">遗产</i></span><small>留给亲人的清单</small></span>
+      </button>
+      <button class="nav-item" data-view="planb">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3.2v5.6c0 4.4-3.1 7.7-7.5 9.2-4.4-1.5-7.5-4.8-7.5-9.2V6.2z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.6"/></svg>
+        <span><span class="nav-label"><span class="nav-full">人生 B 计划</span><i class="nav-abbr">B 计划</i></span><small>四种坠落时的抓手</small></span>
+      </button>
+    </nav>
+
+    <div class="side-foot">
+      <div class="save-state" id="saveState"><span class="save-dot"></span><span id="saveText">已保存</span></div>
+      <p class="side-note">所有内容只写进这台电脑的浏览器，不上传任何服务器。换电脑请用右上角的「数据与备份」导出。</p>
+    </div>
+  </aside>
+
+  <main class="main" id="main">
+
+    <!-- 模块一：个人宪法 -->
+    <section class="view is-active" id="view-constitution" aria-labelledby="h-constitution">
+      <header class="page-head">
+        <div class="page-head-text">
+          <p class="eyebrow">模块一 · 不写给任何人看</p>
+          <h1 id="h-constitution">你愿意反复遵守的那几条</h1>
+          <p class="lede">原则是提前替自己做的决定。写下来，是为了在动摇的那一刻，不用重新思考。</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-ghost" id="btnRead">通读一遍</button>
+          <button class="btn btn-ghost" id="btnConstPrint">打印</button>
+        </div>
+      </header>
+      <div class="const-grid" id="constGrid"></div>
+      <p class="foot-note">建议每季度改一次。改动之前先读一遍旧的，别在深夜删掉自己白天的决定。</p>
+    </section>
+
+    <!-- 模块二：注意力账本 -->
+    <section class="view" id="view-attention" aria-labelledby="h-attention">
+      <header class="page-head">
+        <div class="page-head-text">
+          <p class="eyebrow">模块二 · 不记时长，只记原因</p>
+          <h1 id="h-attention">我为什么分心</h1>
+          <p class="lede">时间统计告诉你分心了几次，这里只关心每次是谁把门推开的。攒够十条，地形自己会浮出来。</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-ghost" id="btnAttnPrint">打印地形</button>
+        </div>
+      </header>
+
+      <div class="attn-grid">
+        <section class="card form-card">
+          <div class="card-head">
+            <h2 class="card-title">记一次分心</h2>
+            <span class="card-count" id="attnTodayCount">今天 0 次</span>
+          </div>
+          <form id="attnForm" autocomplete="off" novalidate>
+            <label class="field">
+              <span class="field-label">发生在</span>
+              <input class="input" type="datetime-local" id="attnWhen">
+            </label>
+            <label class="field">
+              <span class="field-label">当时我在做什么</span>
+              <input class="input" id="attnDoing" placeholder="例：写周报的第三段" maxlength="60">
+            </label>
+            <div class="field">
+              <span class="field-label">是什么把我带走的</span>
+              <div class="chips" id="attnTrigger" role="group" aria-label="分心触发类型"></div>
+            </div>
+            <label class="field">
+              <span class="field-label">分心之后我去了哪</span>
+              <input class="input" id="attnWhere" placeholder="例：群聊、短视频、冰箱前" maxlength="40">
+            </label>
+            <label class="field">
+              <span class="field-label">说真话：那一刻我在躲什么</span>
+              <textarea class="input textarea" id="attnWhy" rows="3" maxlength="240" placeholder="例：怕写不好，先去看看别人怎么写，然后就回不来了。"></textarea>
+            </label>
+            <div class="field">
+              <span class="field-label">身体状态</span>
+              <div class="chips" id="attnBody" role="group" aria-label="身体状态"></div>
+            </div>
+            <div class="field">
+              <span class="field-label">当时的环境</span>
+              <div class="chips" id="attnEnv" role="group" aria-label="环境"></div>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-primary" type="submit">记下这一次</button>
+              <span class="form-note">只需十秒。写不清原因的那条，比不记更有用。</span>
+            </div>
+          </form>
+        </section>
+
+        <section class="card terrain-card">
+          <div class="card-head">
+            <div>
+              <h2 class="card-title">专注地形图</h2>
+              <p class="card-hint">横轴是一天里的时段，纵轴是把我带走的东西。颜色越深，越常发生。</p>
+            </div>
+            <div class="range-tabs" id="rangeTabs" role="tablist" aria-label="时间范围">
+              <button class="range-tab is-on" data-range="all">全部</button>
+              <button class="range-tab" data-range="7">近 7 天</button>
+              <button class="range-tab" data-range="30">近 30 天</button>
+            </div>
+          </div>
+          <div class="terrain-wrap" id="terrainWrap"></div>
+          <div class="legend" id="terrainLegend"></div>
+        </section>
+
+        <section class="card insight-card">
+          <div class="card-head">
+            <h2 class="card-title">地形读到的东西</h2>
+          </div>
+          <div id="insightBody"></div>
+        </section>
+
+        <section class="card entries-card">
+          <div class="card-head">
+            <h2 class="card-title">一条条记下来的</h2>
+            <span class="card-count" id="entryCount">0 条记录</span>
+          </div>
+          <div id="entryList" class="entries"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 模块三：数字遗产 -->
+    <section class="view" id="view-estate" aria-labelledby="h-estate">
+      <header class="page-head">
+        <div class="page-head-text">
+          <p class="eyebrow">模块三 · 让亲人不用猜</p>
+          <h1 id="h-estate">我留下的东西，在哪，怎么办</h1>
+          <p class="lede">只写线索，不写密码本身。目标是：有一天他们打开这份清单，知道第一步该做什么。</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-ghost" id="btnEstatePrint">打印清单</button>
+          <button class="btn btn-ghost" id="btnEstateExport">加密导出</button>
+        </div>
+      </header>
+
+      <div class="stat-strip" id="estateStats"></div>
+
+      <div class="tabs" id="estateTabs" role="tablist" aria-label="清单分类">
+        <button class="tab is-on" data-tab="accounts">账号 <span class="tab-count" id="tabCountAccounts">0</span></button>
+        <button class="tab" data-tab="files">文件与设备 <span class="tab-count" id="tabCountFiles">0</span></button>
+        <button class="tab" data-tab="letters">留给谁的信 <span class="tab-count" id="tabCountLetters">0</span></button>
+        <button class="tab" data-tab="contacts">关键联系人 <span class="tab-count" id="tabCountContacts">0</span></button>
+      </div>
+
+      <div class="tab-panels" id="estatePanels"></div>
+
+      <section class="card handover-card">
+        <div class="card-head">
+          <div>
+            <h2 class="card-title">交给亲人的那一份</h2>
+            <p class="card-hint">加密导出会生成一个需要口令才能打开的文件。口令别和文件放在一起：文件放网盘，口令写在纸上放进抽屉。</p>
+          </div>
+        </div>
+        <div class="handover-actions">
+          <button class="btn btn-primary" id="btnEstateExport2">生成加密文件</button>
+          <button class="btn btn-ghost" id="btnEstatePrint2">打印纸质版</button>
+          <span class="warn-text">明文导出等于把线索写在明信片上，仅在你完全清楚风险时使用。</span>
+        </div>
+      </section>
+    </section>
+
+    <!-- 模块四：人生 B 计划 -->
+    <section class="view" id="view-planb" aria-labelledby="h-planb">
+      <header class="page-head">
+        <div class="page-head-text">
+          <p class="eyebrow">模块四 · 写给最糟的那几天</p>
+          <h1 id="h-planb">坠落的时候，先做这三件事</h1>
+          <p class="lede">不是励志计划，是应急手册。人在应激状态下会失去排序能力，所以顺序要提前写好。</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn btn-ghost" id="btnPlanbPrint">打印</button>
+          <button class="btn btn-primary" id="btnEmergency">打开应急卡</button>
+        </div>
+      </header>
+
+      <div class="planb-tabs" id="planbTabs" role="tablist" aria-label="情景选择"></div>
+      <div id="planbPanel"></div>
+    </section>
+
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modalRoot" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h2 class="modal-title" id="modalTitle">标题</h2>
+      <button class="icon-btn" id="modalClose" aria-label="关闭">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot" id="modalFoot"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <button class="overlay-close" id="overlayClose" aria-label="关闭全屏视图">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="overlay-inner" id="overlayInner"></div>
+</div>
+
+<div class="toast-root" id="toastRoot" aria-live="polite"></div>
+<div id="printRoot" class="print-root"></div>
+
+<noscript>
+  <p style="padding:24px">这个工具需要浏览器启用 JavaScript 才能保存你的内容。</p>
+</noscript>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/constitution.js"></script>
+<script src="js/attention.js"></script>
+<script src="js/estate.js"></script>
+<script src="js/planb.js"></script>
+<script src="js/boot.js"></script>
+</body>
+</html>

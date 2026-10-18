@@ -1,0 +1,14 @@
+# Python 运行时产物（serve.py 用标准库启动本地服务器）
+__pycache__/
+*.py[cod]
+
+# 系统与编辑器杂项
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# 个人数据绝不入库（虽然数据只在浏览器 localStorage 里，留一道保险）
+*.enc.json
+锚点-*.json
